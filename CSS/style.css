@@ -342,9 +342,7 @@ margin-left: 5px;
             font-size: 20px;
             text-align: right;
         }
-        .info2{
-            
-        }
+      
         .inforamint-company {
             display: flex;
             flex-direction: column-reverse; /* يعكس الترتيب بحيث info2 يظهر أولاً */
