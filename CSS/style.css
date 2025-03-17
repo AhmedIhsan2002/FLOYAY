@@ -7,17 +7,21 @@
 body {
     font-family: 'Almarai', sans-serif;
     overflow-x: hidden;
-}
-body {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
+
 
 body.fade-out {
     opacity: 0;
 }
 
-
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
 /* 🌟 تصميم الهيدر */
 header nav,
@@ -31,7 +35,7 @@ header nav,
 }
 
 /* 🌟 شعار الموقع */
-header nav .logo img ,
+header nav .logo img,
 .nav-our-servies nav .logo img {
     width: 160px;
     height: 56px;
@@ -75,7 +79,7 @@ header nav ul li .active {
 .download-btn {
     background-color: #DCA91A;
     color: white;
-    padding: 12px 30px;
+    padding: 12px 20px;
     border: none;
     border-radius: 35px;
     font-size: 18px;
@@ -102,14 +106,14 @@ header {
     position: relative;
     padding-bottom: 20px;
 }
-header.about-sec{
+header.about-sec {
     min-height: 70vh;
     background: url("../images/Background.png") center center/cover no-repeat;
     padding-bottom: 20px;
     padding-top: 20px;
 }
 header.about-sec::before {
-    background: rgba(0, 0, 0, 0.5); /* بدل 0.6 خففها لـ 0.3 */
+    background: rgba(0, 0, 0, 0.5);
 }
 header::before {
     content: "";
@@ -128,76 +132,54 @@ header * {
 @media (max-width: 768px) {
     header nav,
     .nav-our-servies nav {
-        height: 90px;
+        height: 100px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 20px;
         position: relative;
     }
-    header{
+    header {
         min-height: 100vh;
         padding-bottom: 30px;
     }
-    
+
     header nav .nav-links,
     header nav .download-btn-container,
     .nav-our-servies nav .nav-links,
     .nav-our-servies nav .download-btn-container {
         display: none;
-        
     }
 
-   
     header nav #menu-btn,
     .nav-our-servies nav #menu-btn {
         display: block;
     }
 
-    
-       
-       header nav .nav-links.active,
-       header nav .download-btn-container.active,
-       .nav-our-servies nav .nav-links.active,
-       .nav-our-servies nav .download-btn-container.active {
-           display: flex;
-           flex-direction: column;
-           position: absolute;
-           top: 110px;
-           right: 0;
-           /* background: rgba(0, 0, 0, 0.9); */
-           width: 100%;
-           padding: 20px;
-           border-radius: 10px;
-       }
-
-       header nav .nav-links.active li,
-       .nav-our-servies nav .nav-links.active li {
-           margin-bottom: 10px;
-       }
-   
-       header nav .download-btn-container.active {
-           margin-top: 10px;
-       }
-  
-    header nav .nav-links.active {
+    header nav .nav-links.active,
+    header nav .download-btn-container.active,
+    .nav-our-servies nav .nav-links.active,
+    .nav-our-servies nav .download-btn-container.active {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 90px; /* تأكد من أن القائمة تظهر تحت الشعار */
-        right: 0;
-        width: 100%;
+        top: 100px;
+        right: 20px;
+        /* background: rgba(0, 0, 0, 0.9); */
+        width: 90%;
         padding: 20px;
         border-radius: 10px;
-        /* background: rgba(0, 0, 0, 0.9); خلفية مظلمة للقائمة */
+        z-index: 1000;
     }
-    .download-btn-container {
-        display: flex; /* تأكد من أن الزر يظهر */
-        justify-content: center; /* محاذاة الزر في الوسط */
-        margin-top: 10px; /* مسافة بين القائمة والزر */
+
+    header nav .nav-links.active li,
+    .nav-our-servies nav .nav-links.active li {
+        margin-bottom: 15px;
     }
-    
-   
+
+    header nav .download-btn-container.active {
+        margin-top: 15px;
+    }
 }
 
 /* ✅ الشاشات الكبيرة */
@@ -214,45 +196,48 @@ header * {
     }
 }
 
-
+/* 🌟 تنسيق المحتوى */
 .content {
     display: flex;
-    flex-direction: column; /* جعل العناصر تظهر بشكل عمودي */
-    align-items: flex-start; /* محاذاة العناصر لجهة اليمين */
-    justify-content: flex-start; /* جعل العناصر تبدأ من الأعلى */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     height: 90%;
     margin-top: 300px;
-    direction: rtl; /* التأكد من أن النص يظهر من اليمين لليسار */
+    direction: rtl;
 }
 
-.content h4{
+.content h4 {
     color: #FAFAF9;
     font-size: 42px;
     font-weight: 700;
-    margin-left: 20px; /* مسافة صغيرة بين العنوان والفقرة */
+    margin-left: 20px;
 }
-.content p{
+
+.content p {
     color: #DCD9D6;
     font-size: 24px;
     font-weight: 400;
-    margin-left: 20px; /* مسافة صغيرة بين العنوان والفقرة */
-    margin-top: 20px; /* مسافة بين الفقرات */
+    margin-left: 20px;
+    margin-top: 20px;
     line-height: 150%;
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-    .content p{
-        font-size: 20px;
+    .content p {
+        font-size: 18px;
+        line-height: 150%;
     }
-    .content h4{
-        font-size: 36px;
+    .content h4 {
+        font-size: 27px;
     }
 }
 
-.btn-contact{
+/* 🌟 تنسيق زر التواصل */
+.btn-contact {
     background-color: transparent;
     border-radius: 35px;
-    padding: 15px 20px;
+    padding: 15px;
     margin-top: 30px;
     font-size: 20px;
     color: #FEFCF6;
@@ -261,35 +246,43 @@ header * {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* padding-bottom: 30px; */
+}
 
-}
-.btn-contact i{
-font-size: 23px;
-color: #ffffff;
-border: 1.5px;
-margin-left: 5px;
-}
-.btn-contact >div{
-    padding: 15px;
-}
- .fa-left-up{
-    font-size: 18px;  /* حجم الأيقونة */
+.btn-contact i {
+    font-size: 23px;
     color: #ffffff;
-    background-color: #DCA91A; /* لون خلفية الأيقونة */
-    border-radius: 50%;  /* جعلها دائرية */
-    padding: 10px; /* حجم الدائرة */
+    margin-left: 5px;
+}
+
+.fa-left-up {
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #DCA91A;
+    border-radius: 50%;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;  /* ضبط عرض الدائرة */
-    height: 35px; /* ضبط ارتفاع الدائرة */
+    width: 35px;
+    height: 35px;
     margin-right: 30px;
-    
-    /* gap: 10px; */
-    /* padding: 20px; */
 }
 
+@media (max-width: 768px) {
+    .btn-contact {
+        font-size: 16px;
+    }
+
+    .btn-contact i {
+        font-size: 18px;
+    }
+
+    .fa-left-up {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+    }
+}
 
 
 .About-us{
@@ -373,85 +366,191 @@ margin-left: 5px;
     }
 }
 
-.download-app {
-    margin-top: 40px;
-    overflow: hidden; /* لمنع ظهور السكرول غير المرغوب فيه */
+
+
+
+
+.download-app{
+    background-image: url("../images/image\ 30.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center; /* مركزة المحتوى عموديًا */
+   
+    margin-top: 100px;
+
 }
 
-.img-app {
-    position: relative;
-    min-height: 60vh; /* ارتفاع القسم */
+.download-app .container {
+    width: 100%;
+    padding: 0 15px; /* هوامش جانبية */
+}
+
+.download-app .row {
+    display: flex;
+    align-items: center; /* مركزة العناصر عموديًا */
+    justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
+    width: 100%;
+}
+.downlode-app-info h3{
+    font-size: 38px;
+    color: #FAFAF9;
+    font-weight: 700;
+    line-height: 77px;
+
+}
+.downlode-app-info p{
+    font-size: 24px;
+    color: #DCD9D6;
+    
+    font-weight: 400;
+    line-height: 41px;
+    font-style: italic;
+    letter-spacing: -2%;
+}
+.download-app .img-app {
+    flex: 1; /* الصورة تأخذ مساحة متساوية */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* مركزة الصورة */
+}
+.img-app img{
+    max-height: 100%; /* ارتفاع الصورة يتناسب مع القسم */
+    width: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    object-fit: contain; /* منع التشويه */
+
+}
+.download-app .downlode-app-info {
+    flex: 1; /* المحتوى يأخذ مساحة متساوية */
+    padding: 20px; /* هوامش داخلية */
+    max-width: 500px; /* عرض النص */
+}
+/* تنسيقات الشعارات */
+.downlode-app .store-logos {
+    display: flex;
+    gap: 20px; /* المسافة بين الشعارين */
+    margin-top: 30px; /* هامش من الأعلى */
 }
 
-/* 🌟 إخفاء الصور بشكل افتراضي */
-.desktop-img,
-.mobile-img {
-    display: none;
+.downlode-app .store-logos img {
+    width: 120px; /* عرض الشعار */
+    height: 48px; /* ارتفاع الشعار */
+    border-radius: 6px; /* زوايا مدورة */
+    border: 1px solid #ccc; /* إطار خفيف */
+    transition: transform 0.3s ease; /* تأثير عند التمرير */
 }
-/* 🌟 عرض الصورة المناسبة لكل شاشة */
-@media (min-width: 768px) { /* شاشات كبيرة (md, lg) */
-    .desktop-img {
-        display: block;
+
+.downlode-app .store-logos img:hover {
+    transform: scale(1.05); /* تكبير الشعار عند التمرير */
+}
+/* تجاوبية القسم */
+@media (max-width: 992px) {
+    .download-app .row {
+        flex-direction: column; /* ترتيب العناصر عموديًا على الشاشات الصغيرة */
+    }
+
+    .download-app .img-app {
+        height: auto; /* ارتفاع الصورة يتناسب مع المحتوى */
+    }
+
+    .download-app .img-app img {
+        width: 100%; /* عرض الصورة بنسبة 100% */
+        height: auto; /* ارتفاع الصورة يتناسب مع العرض */
+    }
+
+    .download-app .downlode-app-info {
+        text-align: center; /* مركزة النص على الشاشات الصغيرة */
+        padding: 10px; /* تقليل الهوامش */
+    }
+
+    .download-app .downlode-app-info h3 {
+        font-size: 28px; /* تصغير حجم العنوان */
+        line-height: 50px;
+    }
+
+    .download-app .downlode-app-info p {
+        font-size: 18px; /* تصغير حجم النص */
+        line-height: 30px;
+    }
+}
+/* تجاوبية الشعارات */
+@media (max-width: 767.98px) {
+    .downlode-app .store-logos {
+        justify-content: center; /* مركزة الشعارات على الشاشات الصغيرة */
+    }
+    .download-app {
         width: 100%;
-        height: auto;
+        height: auto; /* ارتفاع القسم يتناسب مع المحتوى */
+        padding: 40px 0; /* إضافة هوامش داخلية */
+    }
+    .download-app .downlode-app-info {
+        max-width: 100%; /* المحتوى يأخذ العرض الكامل */
+        text-align: center; /* مركزة النص */
+        padding: 10px; /* تقليل الهوامش */
+    }
+
+    .downlode-app .store-logos img {
+        width: 100px; /* تصغير عرض الشعار */
+        height: 40px; /* تصغير ارتفاع الشعار */
+    }
+    .download-app .downlode-app-info h3 {
+        font-size: 28px; /* تصغير حجم العنوان */
+        line-height: 50px;
+    }
+
+    .download-app  .downlode-app-info p {
+        font-size: 18px; /* تصغير حجم النص */
+        line-height: 30px;
+    }
+    .download-app .img-app img{
+        display: none;
     }
 }
-
-@media (max-width: 767px) { /* شاشات صغيرة (xs, sm) */
-    .mobile-img {
-        display: block;
-        width: 100%;
-        height: auto;
+@media (max-width: 575.98px) {
+    /* التنسيقات الخاصة بالهواتف المحمولة (عمودية) */
+    .download-app .downlode-app-info {
+        max-width: 100%; /* المحتوى يأخذ العرض الكامل */
+        text-align: right; /* مركزة النص */
     }
 }
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .download-app .img-app img{
+        display: none;
+    } /* التنسيقات الخاصة بالهواتف المحمولة (أفقية) */
 
-/* 🌟 تصميم صورة الطائرة */
-.plane-img {
-    width: 100%;
-    max-width: 300px; /* حجم الصورة الأقصى */
-    height: auto;
-    position: absolute;
-    bottom: -50px; /* تعديل موقع الصورة حسب الحاجة */
-}
+    .download-app .downlode-app-info {
+        max-width: 100%; /* المحتوى يأخذ العرض الكامل */
+        text-align: right; /* مركزة النص */
+    }
 
-/* 🌟 Media Queries للتجاوب مع الشاشات المختلفة */
-@media (min-width: 768px) and (max-width: 991px) { /* شاشات md */
-    .img-app {
-        min-height: 50vh;
+    .download-app .downlode-app-info h3 {
+        font-size: 28px; /* تصغير حجم العنوان */
+        line-height: 50px;
     }
-    .plane-img {
-        max-width: 250px;
-    }
-}
 
-@media (min-width: 576px) and (max-width: 767px) { /* شاشات sm */
-    .img-app {
-        min-height: 40vh;
+    .download-app .downlode-app-info p {
+        font-size: 18px; /* تصغير حجم النص */
+        line-height: 30px;
     }
-    .plane-img {
-        max-width: 200px;
-        bottom: -30px;
-    }
-}
 
-@media (max-width: 575px) { /* شاشات xs */
-    .img-app {
-        min-height: 100vh;
+    .download-app .store-logos {
+        justify-content: center; /* مركزة الشعارات */
     }
-    .plane-img {
-        max-width: 150px;
-        bottom: -20px;
+
+    .download-app .store-logos img {
+        width: 100px; /* تصغير عرض الشعار */
+        height: 40px; /* تصغير ارتفاع الشعار */
     }
 }
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .download-app .img-app img{
+        display: none;
+    } /* التنسيقات الخاصة بالهواتف المحمولة (أفقية) */
 
-
-
-
-
-
+}
 
 .services{
     margin-top: 50px;
@@ -533,6 +632,7 @@ margin-left: 5px;
 }
 .new{
     margin-top: 50px;
+    overflow-x: hidden;
 }
 .img-news{
     position: relative;
@@ -540,16 +640,16 @@ margin-left: 5px;
 }
 
 .img-news img {
-    width: 700px; /* تجعل الصورة تستجيب لحجم الحاوية */
-    height: 680px;
+    max-width: 100%; /* جعل الصورة متجاوبة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
     display: block;
     
 }
 .news-content {
     position: absolute;
-   margin-top: -40%;
-    /* left: 50%; */
-    
+    top: 50%; /* مركزة المحتوى عموديًا */
+    right: 20px; /* إضافة هامش من اليمين */
+    transform: translateY(-50%); /* مركزة المحتوى عموديًا */
     text-align: right;
    
 }
@@ -671,8 +771,11 @@ margin-left: 5px;
 @media (max-width: 766px) {
     .silder-new img {
         width: 100%;
-        max-width: 200px; /* تصغير الحجم */
-        height: auto;
+       
+    }
+    .news-content{
+        top: 30%; 
+        right: 10px; 
     }
     .news-content h2 {
         font-size: 30px;
@@ -680,6 +783,9 @@ margin-left: 5px;
     }
     .news-content p {
         font-size: 18px;
+    }
+    .silder-new img {
+        max-width: 200px; /* تصغير حجم الصور داخل السلايدر */
     }
     .slider-controls {
         margin-left: 10px;
@@ -691,19 +797,7 @@ margin-left: 5px;
         margin-top: 30px;
     }
 }
-@media (max-width: 767px) {
-    .news-content h2 {
-        font-size: 30px; /* تصغير حجم الخط */
-        line-height: 1.5; /* تعديل تباعد الأسطر */
-    }
-    .news-content p {
-        font-size: 18px; /* تصغير حجم الخط */
-    }
-    .slider-controls {
-        margin-left: 10px; /* تقليل الهوامش */
-        margin-right: 10px;
-    }
-}
+
 
 .footer-sec{
     background-color: #241C04;
@@ -803,18 +897,8 @@ margin-left: 5px;
 .logo-website li img:hover {
     transform: rotate(10deg) scale(1.1);
 }
-.footer-sec::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, #fff, transparent);
-    animation: moveLine 3s infinite linear;
-}
-@keyframes moveLine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
+
+
 .list-contact li a:hover,
 .btn-global:hover {
     color: #FFD700;
@@ -896,14 +980,12 @@ margin-left: 5px;
 }
 
 .img-card-servies img {
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
-.img-card-servies:hover img {
-    transform: scale(1.05);
-}
+
 
 .info-cards-servies {
     margin-right: 30px;
@@ -940,7 +1022,8 @@ margin-left: 5px;
 
 @media (max-width: 991px) {
     .info-cards-servies {
-        margin-bottom: 30px; 
+        margin-bottom: 40px; 
+        margin-top: 30px;
     }
 } 
 
