@@ -1,13 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // تهيئة AOS
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    } else {
-        console.error("AOS library is not loaded!");
-    }
+  
   
     // 🌟 الكود الخاص بالقائمة الجانبية
     const menuBtn = document.getElementById("menu-btn");
@@ -65,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateSlider();
         }
   
-        // 🌟 دالة لتحريك السلايدر إلى الصورة السابقة
+    //    ة لتحريك السلايدر إلى الصورة السابق
         function slidePrev() {
             if (currentIndex > 0) {
                 currentIndex--;
